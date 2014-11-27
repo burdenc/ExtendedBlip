@@ -1,26 +1,19 @@
 #include "Statement.h"
 
+#include "Call.h"
 #include "CallStack.h"
 #include "Parse.h"
 #include "ParseTree.h"
 
 #include <stdio.h>
 
-const int num_statements = 4;
-
-String lookup[] =
-{
-	"text",
-	"set",
-	"var",
-	"output",
-    "return"
-};
-
 Statement::Statement(StatementType type) : type(type)
 {
 	switch (type)
 	{
+    case CALL:
+        functionCall = new Call();
+        break;
     case TEXT:
         read_next_token();
         output = next_token();
@@ -40,6 +33,7 @@ Statement::Statement(StatementType type) : type(type)
 Statement::~Statement()
 {
 	delete expression;
+	delete functionCall;
 }
 
 ReturnType Statement::execute()
@@ -65,6 +59,9 @@ ReturnType Statement::execute()
         result.returned = true;
         result.returned_value = expression->execute();
         break;
+	case CALL:
+		functionCall->eval(0, 0);
+		break;
 	}
 
     return result;

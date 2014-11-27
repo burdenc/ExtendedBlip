@@ -4,6 +4,7 @@
 
 #include "String.h"
 
+class Call;
 class ParseTree;
 
 enum StatementType
@@ -12,7 +13,8 @@ enum StatementType
 	SET,
 	VAR,
 	OUTPUT,
-    RETURN
+    RETURN,
+    CALL
 };
 
 class Statement : public IStatement
@@ -27,5 +29,6 @@ public:
 	String var_name;
     String output;
 	ParseTree* expression = nullptr;
+    Call* functionCall = nullptr;
 };
 

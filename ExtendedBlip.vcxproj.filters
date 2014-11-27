@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Header Files\Tokens">
+      <UniqueIdentifier>{7745282a-583c-47ad-85d6-e082cd72b7c8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Statements">
+      <UniqueIdentifier>{5fe33c0f-860a-450a-a467-ec8b2d1b5a2c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Tokens">
+      <UniqueIdentifier>{5429f3de-1cbc-426d-934f-81c2dec30db4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Statements">
+      <UniqueIdentifier>{4ffb61dd-ae2c-49a9-8d68-a6bf5c7d1fe6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="source\CallStack.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Input.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ParseTree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Source.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Table.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Call.cpp">
+      <Filter>Source Files\Tokens</Filter>
+    </ClCompile>
+    <ClCompile Include="source\ConditionalStatement.cpp">
+      <Filter>Source Files\Statements</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Function.cpp">
+      <Filter>Source Files\Statements</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Statement.cpp">
+      <Filter>Source Files\Statements</Filter>
+    </ClCompile>
+    <ClCompile Include="source\Operator.cpp">
+      <Filter>Source Files\Tokens</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="source\CallStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Parse.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ParseTree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\String.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Table.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Vector.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Call.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="source\ConditionalStatement.h">
+      <Filter>Header Files\Statements</Filter>
+    </ClInclude>
+    <ClInclude Include="source\IStatement.h">
+      <Filter>Header Files\Statements</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Function.h">
+      <Filter>Header Files\Statements</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Statement.h">
+      <Filter>Header Files\Statements</Filter>
+    </ClInclude>
+    <ClInclude Include="source\StatementFactory.h">
+      <Filter>Header Files\Statements</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Token.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Variable.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="source\TokenFactory.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+    <ClInclude Include="source\Operator.h">
+      <Filter>Header Files\Tokens</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

@@ -14,7 +14,8 @@ static String normal_lookup[] =
     "set",
     "var",
     "output",
-    "return"
+    "return",
+    "call"
 };
 int const num_normal_lookup = sizeof(normal_lookup) / sizeof(String);
 

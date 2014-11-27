@@ -1,3 +1,13 @@
+# VS
+*.suo
+*.user
+*.ncb
+*.sdf
+*.opensdf
+ipch/
+Debug/
+Release/
+
 # Compiled Object files
 *.slo
 *.lo
