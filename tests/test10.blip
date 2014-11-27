@@ -1,0 +1,13 @@
+// The evil test :P
+var x 2
+
+defun fib params x smarap
+	if || == x 1 == x 2
+        return 1
+    fi
+	return + call fib args - x 1 sgra call fib args - x 2 sgra
+nufed
+
+output call fib args 10 sgra
+
+
