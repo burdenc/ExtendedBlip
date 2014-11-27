@@ -1,7 +1,7 @@
 // The evil test :P
 var x 2
 
-defun foo params x smarap
+defun foo ( x )
 	var z 0
 	do > x 0
 		set x - x 1 
@@ -12,9 +12,9 @@ defun foo params x smarap
 	end
 end
 
-output call foo args 5 sgra
-output call foo args x sgra
-output call foo args x sgra
+output call foo ( 5 )
+output call foo ( x )
+output call foo ( x )
 
 
 

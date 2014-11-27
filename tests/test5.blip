@@ -1,13 +1,13 @@
-defun fact params n smarap
+defun fact ( n )
     if < n 2 return 1 end
-    return * n call fact args - n 1 sgra
+    return * n call fact ( - n 1 )
 end
 
 var x 1
 do < x 10
     output x
     text "! is "
-    output call fact args x sgra
+    output call fact ( x )
     text \n
     set x + x 1
 end
