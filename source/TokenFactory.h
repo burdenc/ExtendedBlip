@@ -24,6 +24,9 @@ public:
             return new Call();
         }
 
+        if (String("true") == next_token()) { return new Token(1); }
+        if (String("false") == next_token()) { return new Token(0); }
+
         switch (next_token_type)
         {
         case NUMBER:
