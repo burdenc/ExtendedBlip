@@ -9,8 +9,8 @@
 
 Statement::Statement(StatementType type) : type(type)
 {
-	switch (type)
-	{
+    switch (type)
+    {
     case CALL:
         functionCall = new Call();
         break;
@@ -18,51 +18,51 @@ Statement::Statement(StatementType type) : type(type)
         read_next_token();
         output = next_token();
         break;
-	case SET:
-	case VAR:
+    case SET:
+    case VAR:
         read_next_token();
-		var_name = next_token();
+        var_name = next_token();
     case RETURN:
-	case OUTPUT:
-		expression = new ParseTree();
-		expression->buildTree();
-	}
+    case OUTPUT:
+        expression = new ParseTree();
+        expression->buildTree();
+    }
 }
 
 
 Statement::~Statement()
 {
-	delete expression;
-	delete functionCall;
+    delete expression;
+    delete functionCall;
 }
 
 ReturnType Statement::execute()
 {
     ReturnType result;
-	Table& scope = CallStack::getScope();
+    Table& scope = CallStack::getScope();
 
-	switch (type)
-	{
-	case TEXT:
-		printf("%s", output.c_str());
-		break;
-	case SET:
-		scope[var_name] = expression->execute();
-		break;
-	case VAR:
-		scope.declare(var_name, expression->execute());
-		break;
-	case OUTPUT:
-		printf("%d", expression->execute());
+    switch (type)
+    {
+    case TEXT:
+        printf("%s", output.c_str());
+        break;
+    case SET:
+        scope[var_name] = expression->execute();
+        break;
+    case VAR:
+        scope.declare(var_name, expression->execute());
+        break;
+    case OUTPUT:
+        printf("%d", expression->execute());
         break;
     case RETURN:
         result.returned = true;
         result.returned_value = expression->execute();
         break;
-	case CALL:
-		functionCall->eval(0, 0);
-		break;
-	}
+    case CALL:
+        functionCall->eval(0, 0);
+        break;
+    }
 
     return result;
 }

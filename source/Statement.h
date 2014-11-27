@@ -9,10 +9,10 @@ class ParseTree;
 
 enum StatementType
 {
-	TEXT,
-	SET,
-	VAR,
-	OUTPUT,
+    TEXT,
+    SET,
+    VAR,
+    OUTPUT,
     RETURN,
     CALL
 };
@@ -20,15 +20,15 @@ enum StatementType
 class Statement : public IStatement
 {
 public:
-	Statement(StatementType type);
-	virtual ~Statement();
+    Statement(StatementType type);
+    virtual ~Statement();
 
-	virtual ReturnType execute();
+    virtual ReturnType execute();
 
-	StatementType type;
-	String var_name;
+    StatementType type;
+    String var_name;
     String output;
-	ParseTree* expression = nullptr;
+    ParseTree* expression = nullptr;
     Call* functionCall = nullptr;
 };
 

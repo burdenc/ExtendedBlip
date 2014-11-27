@@ -34,7 +34,7 @@ Function::~Function()
 
 int Function::call(int* args)
 {
-	Table& scope = CallStack::getScope();
+    Table& scope = CallStack::getScope();
 
     for (unsigned int i = 0; i < param_names.size(); i++)
     {

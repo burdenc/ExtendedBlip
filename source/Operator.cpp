@@ -22,36 +22,36 @@ int not_op(int a, int b) { return -a; }
 
 // Operation lookup table
 OperatorEval operations[] = {
-	add,
-	sub,
-	mult,
-	divi,
-	mod,
-	equal,
-	not_equal,
-	less,
-	greator,
-	less_eq,
-	greator_eq,
-	and_op,
-	or_op,
-	logic_not,
-	not_op
+    add,
+    sub,
+    mult,
+    divi,
+    mod,
+    equal,
+    not_equal,
+    less,
+    greator,
+    less_eq,
+    greator_eq,
+    and_op,
+    or_op,
+    logic_not,
+    not_op
 };
 
 Operator::Operator(String val) : Token(false)
 {
-	for (int i = 0; i < number_operations; i++)
-	{
-		if (val == operations_str[i]) oper_eval = operations[i];
-	}
+    for (int i = 0; i < number_operations; i++)
+    {
+        if (val == operations_str[i]) oper_eval = operations[i];
+    }
 }
 
 Operator::~Operator() {}
 
 int Operator::eval(int left, int right)
 {
-	return oper_eval(left, right);
+    return oper_eval(left, right);
 }
 
 bool Operator::isUnary(Operator* oper)

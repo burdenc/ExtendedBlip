@@ -10,7 +10,7 @@ Table* Table::global = nullptr;
 
 Table::Table()
 {
-	if (!Table::global) { Table::global = this; }
+    if (!Table::global) { Table::global = this; }
 }
 
 Table::~Table()
@@ -26,22 +26,22 @@ bool Table::exists(const String& name, bool use_global)
 
     if (!use_global) { return false; }
 
-	if (Table::global != this)
-	{
-		return Table::global->exists(name);
-	}
+    if (Table::global != this)
+    {
+        return Table::global->exists(name);
+    }
 
     return false;
 }
 
 int& Table::declare(const String& name, int value)
 {
-	if (exists(name, false))
-	{
-		printf("variable %s incorrectly re-initialized\n", name.c_str());
-		(*this)[name] = value;
-		return (*this)[name];
-	}
+    if (exists(name, false))
+    {
+        printf("variable %s incorrectly re-initialized\n", name.c_str());
+        (*this)[name] = value;
+        return (*this)[name];
+    }
     
     name_list.push_back(name);
     value_list.push_back(value);
@@ -56,10 +56,10 @@ int& Table::operator[](const String& name)
         if (name == name_list[i]) { return value_list[i]; }
     }
 
-	if (Table::global != this && Table::global->exists(name))
-	{
-		return Table::global->operator[](name);
-	}
+    if (Table::global != this && Table::global->exists(name))
+    {
+        return Table::global->operator[](name);
+    }
 
     // Accessing undeclared variable, spit warning
     printf("variable %s not declared\n", name.c_str());
@@ -72,12 +72,12 @@ int Table::callFunc(String name, int* args)
     for (unsigned int i = 0; i < function_list.size(); i++)
     {
         if (name == function_list[i]->name)
-		{
-			CallStack::instance().push();
-			int ret = function_list[i]->call(args);
-			CallStack::instance().pop();
-			return ret;
-		}
+        {
+            CallStack::instance().push();
+            int ret = function_list[i]->call(args);
+            CallStack::instance().pop();
+            return ret;
+        }
     }
 
     if (Table::global != this)
@@ -85,5 +85,5 @@ int Table::callFunc(String name, int* args)
         return Table::global->callFunc(name, args);
     }
 
-	return 0;
+    return 0;
 }

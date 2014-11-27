@@ -6,11 +6,11 @@ class Token
 {
 public:
     Token(int value) : value(value), isOperand(true) {};
-	virtual ~Token() {};
+    virtual ~Token() {};
 
-	virtual int eval(int left, int right) { return value; };
+    virtual int eval(int left, int right) { return value; };
 
-	int value;
+    int value;
     bool isOperand;
     TokenType type;
 

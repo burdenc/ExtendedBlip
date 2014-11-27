@@ -6,19 +6,19 @@
 class CallStack
 {
 public:
-	~CallStack();
-	static CallStack& instance();
-	static Table& getScope();
+    ~CallStack();
+    static CallStack& instance();
+    static Table& getScope();
 
-	void push();
-	void pop();
-	Table& peek();
+    void push();
+    void pop();
+    Table& peek();
 
 private:
-	CallStack();
-	CallStack(const CallStack& ref);
-	CallStack& operator=(const CallStack& ref);
+    CallStack();
+    CallStack(const CallStack& ref);
+    CallStack& operator=(const CallStack& ref);
 
-	Vector<Table*> scopes;
+    Vector<Table*> scopes;
 };
 

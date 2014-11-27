@@ -12,28 +12,28 @@ CallStack::~CallStack()
 
 CallStack& CallStack::instance()
 {
-	static CallStack singleton;
+    static CallStack singleton;
 
-	return singleton;
+    return singleton;
 }
 
 Table& CallStack::getScope()
 {
-	return CallStack::instance().peek();
+    return CallStack::instance().peek();
 }
 
 Table& CallStack::peek()
 {
-	return *scopes[scopes.size() - 1];
+    return *scopes[scopes.size() - 1];
 }
 
 void CallStack::push()
 {
-	scopes.push_back(new Table);
+    scopes.push_back(new Table);
 }
 
 void CallStack::pop()
 {
-	delete scopes[scopes.size() - 1];
-	scopes.pop_back();
+    delete scopes[scopes.size() - 1];
+    scopes.pop_back();
 }

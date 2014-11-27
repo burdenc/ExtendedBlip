@@ -35,19 +35,19 @@ Call::~Call()
 
 int Call::eval(int a, int b)
 {
-	int* arg_values = nullptr;
+    int* arg_values = nullptr;
 
-	if (args_list.size() != 0)
-	{
-		arg_values = new int[args_list.size()];
+    if (args_list.size() != 0)
+    {
+        arg_values = new int[args_list.size()];
 
-		for (unsigned int i = 0; i < args_list.size(); i++)
-		{
-			arg_values[i] = args_list[i]->execute();
-		}
-	}
+        for (unsigned int i = 0; i < args_list.size(); i++)
+        {
+            arg_values[i] = args_list[i]->execute();
+        }
+    }
 
-	int result = CallStack::getScope().callFunc(function_name, arg_values);
+    int result = CallStack::getScope().callFunc(function_name, arg_values);
 
     delete [] arg_values;
 

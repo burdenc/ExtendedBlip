@@ -45,101 +45,101 @@
 template <typename T>
 struct Vector {
 private:
-	uint32_t len;
-	uint32_t capacity;
-	T* data;
+    uint32_t len;
+    uint32_t capacity;
+    T* data;
 
-	const uint32_t minimum_capacity = 8;
+    const uint32_t minimum_capacity = 8;
 public:
-	/* Constructors */
-	Vector(uint32_t init_size) {
-		init(init_size);
-		for (uint32_t k = 0; k < len; k += 1) {
-			T val{}; // default construct a value of type T
-			data[k] = val;
-		}
-	}
+    /* Constructors */
+    Vector(uint32_t init_size) {
+        init(init_size);
+        for (uint32_t k = 0; k < len; k += 1) {
+            T val{}; // default construct a value of type T
+            data[k] = val;
+        }
+    }
 
-	Vector(void) {
-		init(0);
-	}
+    Vector(void) {
+        init(0);
+    }
 
-	/* Destructor */
-	~Vector(void) { 
-		delete [] data; 
-	}
+    /* Destructor */
+    ~Vector(void) { 
+        delete [] data; 
+    }
 
-	/* Copy and assignment */
-	Vector(const Vector<T>& that) { copy(that); }
+    /* Copy and assignment */
+    Vector(const Vector<T>& that) { copy(that); }
 
-	Vector<T>& operator=(const Vector<T>& rhs) {
-		if (this != &rhs) { // protect against someone doing "x = x";
-			this->destroy();
-			this->copy(rhs);
-		}
-		return *this;
-	}
+    Vector<T>& operator=(const Vector<T>& rhs) {
+        if (this != &rhs) { // protect against someone doing "x = x";
+            this->destroy();
+            this->copy(rhs);
+        }
+        return *this;
+    }
 
-	/* simple data access methods */
-	uint32_t size(void) const { return len; }
+    /* simple data access methods */
+    uint32_t size(void) const { return len; }
 
-	T& operator[](uint32_t k) {
-		if (k >= len) { // client error!
-			barf("vector index out of bounds");
-		}
-		return data[k];
-	}
+    T& operator[](uint32_t k) {
+        if (k >= len) { // client error!
+            barf("vector index out of bounds");
+        }
+        return data[k];
+    }
 
-	void push_back(const T& val) {
-		if (len == capacity) {
-			capacity *= 2;
-			T* old_data = data;
-			data = new T[capacity];
-			for (uint32_t k = 0; k < len; k += 1) {
-				data[k] = old_data[k];
-			}
-			delete [] old_data;
-		}
-		data[len] = val;
-		len += 1;
-	}
+    void push_back(const T& val) {
+        if (len == capacity) {
+            capacity *= 2;
+            T* old_data = data;
+            data = new T[capacity];
+            for (uint32_t k = 0; k < len; k += 1) {
+                data[k] = old_data[k];
+            }
+            delete [] old_data;
+        }
+        data[len] = val;
+        len += 1;
+    }
 
-	void pop_back(void) {
-		if (len == 0) { // client error!
-			barf("pop on empty vector");
-		}
-		len -= 1;
-	}
-	
+    void pop_back(void) {
+        if (len == 0) { // client error!
+            barf("pop on empty vector");
+        }
+        len -= 1;
+    }
+    
 private:
-	void init(uint32_t init_size) {
-		len = init_size;
-		capacity = init_size;
-		if (capacity < minimum_capacity) { capacity = minimum_capacity; }
+    void init(uint32_t init_size) {
+        len = init_size;
+        capacity = init_size;
+        if (capacity < minimum_capacity) { capacity = minimum_capacity; }
 
-		data = new T[capacity];
-	}
+        data = new T[capacity];
+    }
 
 
-	/* copy assumes that "this" is uninitialized
-	 * and copy will initialize this to be a true
-	 * duplicate of "that") */
-	void copy(const Vector<T>& that) {
-		init(that.len);
-		for (uint32_t k = 0; k < that.len; k += 1) {
-			this->data[k] = that.data[k];
-		}
-	}
+    /* copy assumes that "this" is uninitialized
+     * and copy will initialize this to be a true
+     * duplicate of "that") */
+    void copy(const Vector<T>& that) {
+        init(that.len);
+        for (uint32_t k = 0; k < that.len; k += 1) {
+            this->data[k] = that.data[k];
+        }
+    }
 
-	/* destroy assumes that the vector is initialized and it returns
-	* the vector to an uninitialized state */
-	void destroy(void) {
-		delete [] data;
-	}
+    /* destroy assumes that the vector is initialized and it returns
+    * the vector to an uninitialized state */
+    void destroy(void) {
+        delete [] data;
+    }
 
-	void barf(const char* msg) {
-		printf("FATAL ERROR %s\n", msg);
-		throw std::exception{};
-	}
+    void barf(const char* msg) {
+        printf("FATAL ERROR %s\n", msg);
+        throw std::exception{};
+    }
 };
 

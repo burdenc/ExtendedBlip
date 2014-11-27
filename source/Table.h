@@ -17,13 +17,13 @@ public:
 
     bool exists(const String& name, bool use_global = true);
 
-	unsigned int size() { return name_list.size(); }
+    unsigned int size() { return name_list.size(); }
 
     bool funcExists(String name);
     int callFunc(String name, int* args);
     void declareFunc(Function* func) { function_list.push_back(func); }
 
-	static Table* global;
+    static Table* global;
 
 private:
     Vector<Function*> function_list;

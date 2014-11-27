@@ -3,15 +3,15 @@
 
 #include <stdint.h>
 enum TokenType {
-	NUMBER,
-	SYMBOL,
-	KEYWORD, // not currently used or supported by Parse.h/Input.cpp
-	NAME,
-	STRING,
+    NUMBER,
+    SYMBOL,
+    KEYWORD, // not currently used or supported by Parse.h/Input.cpp
+    NAME,
+    STRING,
 
-	END, // special marker for end of input
+    END, // special marker for end of input
 
-	INVALID // this token type should never appear and represents a parsing error
+    INVALID // this token type should never appear and represents a parsing error
 };
 
 /* The next_token_type global variable identifies the type of the most recently read

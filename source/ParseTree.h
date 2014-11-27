@@ -19,7 +19,7 @@ public:
 class ParseTree
 {
 public:
-	ParseTree() {}
+    ParseTree() {}
 
     //ParseTree(const String& expression, Table& variable_scope);
     ~ParseTree() { delete root_node; }
