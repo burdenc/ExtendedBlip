@@ -11,10 +11,10 @@ var g 1
 var h 1
 
 do < x 1000000
-	set x + x 1
-	set y + x 1
-	set z + y 1
-	set a + a 1
+    set x + x 1
+    set y + x 1
+    set z + y 1
+    set a + a 1
     set b + b 1
     set c + c 1
     set d + d 1

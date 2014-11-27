@@ -4,35 +4,35 @@ defun foo0 ( )
 end
 
 defun foo ( )
-	return + 1 2
+    return + 1 2
 end
 
 
 set x call foo ( )
 
 if == x 3 
-	text "Good start! A function without params seems to be working\n"
+    text "Good start! A function without params seems to be working\n"
 else 
-	text "Oops! Return value of the function call doesn't match!\n"
+    text "Oops! Return value of the function call doesn't match!\n"
 end
 
 set x call foo0 ( )
 
 if == x 0 
-	text "A function without return statement returns zero! Hurray!\n"
+    text "A function without return statement returns zero! Hurray!\n"
 else 
-	text "Oops! Somethings wrong!\n"
+    text "Oops! Somethings wrong!\n"
 end
 
 // Functions with local variables and parameters
 
 defun foo1 ( x )
-	var z 0
-	do > x 0 
-		set x - x 1
-		set z + z 1
-	end
-	return z
+    var z 0
+    do > x 0 
+        set x - x 1
+        set z + z 1
+    end
+    return z
 end
 
 
@@ -43,7 +43,7 @@ set x 5
 set z call foo1 ( x )
 
 if && == x 5 == z 5 
-	text "Local scoping of parameters and variables seems to be working!\n"
+    text "Local scoping of parameters and variables seems to be working!\n"
 end
 
 text "One more check ... "
@@ -54,7 +54,7 @@ set x call foo1 ( x )
 
 
 if && == z 4 == x 5
-	text "It works!!\n"
+    text "It works!!\n"
 end
  
 
