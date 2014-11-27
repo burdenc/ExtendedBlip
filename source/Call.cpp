@@ -4,8 +4,6 @@
 #include "Parse.h"
 #include "ParseTree.h"
 
-static String args_terminator = "sgra";
-
 // TODO: This code sucks, nested ParseTrees make infants cry
 
 Call::Call() : Token(true)
@@ -13,7 +11,9 @@ Call::Call() : Token(true)
     read_next_token();
     function_name = next_token();
 
-    read_next_token(); // args keyword
+    read_next_token(); // "(" token
+
+    String args_terminator = ")";
     while (args_terminator != peek_next_token())
     {
         ParseTree* tree = new ParseTree();

@@ -3,14 +3,13 @@
 #include "Parse.h"
 #include "StatementFactory.h"
 
-String params_terminator = "smarap";
-
 Function::Function()
 {
     read_next_token();
     name = next_token();
-    read_next_token(); // "params" token
+    read_next_token(); // "(" token
 
+    String params_terminator = ")";
     while (read_next_token(), params_terminator != next_token())
     {
         param_names.push_back(next_token()); // Define parameters
