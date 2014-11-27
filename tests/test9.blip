@@ -8,9 +8,9 @@ defun foo params x smarap
 		set z + z 1
 		if == x 2
 			return + z 1 
-		fi
-	od
-nufed
+		end
+	end
+end
 
 output call foo args 5 sgra
 output call foo args x sgra

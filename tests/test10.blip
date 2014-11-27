@@ -1,13 +1,13 @@
-// The evil test :P
-var x 2
+// More recursion
 
 defun fib params x smarap
 	if || == x 1 == x 2
         return 1
-    fi
+    end
 	return + call fib args - x 1 sgra call fib args - x 2 sgra
-nufed
+end
 
-output call fib args 10 sgra
+text "The 15th Fibonacci number is: " 
+output call fib args 15 sgra
 
 

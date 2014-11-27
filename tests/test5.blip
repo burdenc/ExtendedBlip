@@ -1,7 +1,7 @@
 defun fact params n smarap
-    if < n 2 return 1 fi
+    if < n 2 return 1 end
     return * n call fact args - n 1 sgra
-nufed
+end
 
 var x 1
 do < x 10
@@ -10,4 +10,4 @@ do < x 10
     output call fact args x sgra
     text \n
     set x + x 1
-od
+end

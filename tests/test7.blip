@@ -22,21 +22,21 @@ do < x 1000000
     set f + f 1
     set g + g 1
     set h + h 1
-od
+end
 
 text "Good! your code runs for a large loop\n Maybe, test it for even larger ones later...."
 
 set x 1
 
 do > 0 x
-od
+end
 
 text "Awesome! you could parse a loop with no statements.\n"
 
 text "Now, how about an infinite one?\n"
 
 do < 0 x
-od
+end
 
 
 
