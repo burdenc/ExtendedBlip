@@ -24,11 +24,6 @@ static String conditional_lookup[] =
     "if",
     "do"
 };
-static String terminator_lookup[] =
-{
-    "fi",
-    "od"
-};
 int const num_conditional_lookup = sizeof(conditional_lookup) / sizeof(String);
 
 static String function_keyword = "defun";
@@ -50,7 +45,7 @@ public:
         {
             if (conditional_lookup[i] == next_token())
             {
-                return new ConditionalStatement((ConditionalType) i, terminator_lookup[i]);
+                return new ConditionalStatement((ConditionalType) i);
             }
         }
 

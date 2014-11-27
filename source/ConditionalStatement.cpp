@@ -9,8 +9,9 @@
 
 String else_str = "else"; // Hack, eh
 
-ConditionalStatement::ConditionalStatement(ConditionalType type, String terminator) : conditional(), type(type)
+ConditionalStatement::ConditionalStatement(ConditionalType type) : conditional(), type(type)
 {
+    String terminator = "end";
     conditional.buildTree();
 
     while (read_next_token(), terminator != next_token() && else_str != next_token())

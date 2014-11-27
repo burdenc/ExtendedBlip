@@ -3,7 +3,6 @@
 #include "Parse.h"
 #include "StatementFactory.h"
 
-String func_terminator = "nufed";
 String params_terminator = "smarap";
 
 Function::Function()
@@ -17,7 +16,8 @@ Function::Function()
         param_names.push_back(next_token()); // Define parameters
     }
 
-    while (read_next_token(), func_terminator != next_token())
+    String terminator = "end";
+    while (read_next_token(), terminator != next_token())
     {
         function_statements.push_back(StatementFactory::buildNextStatement());
     }

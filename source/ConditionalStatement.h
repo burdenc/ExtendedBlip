@@ -15,7 +15,7 @@ enum ConditionalType
 class ConditionalStatement : public IStatement
 {
 public:
-    ConditionalStatement(ConditionalType type, String terminator);
+    ConditionalStatement(ConditionalType type);
     virtual ~ConditionalStatement();
 
     virtual ReturnType execute();
