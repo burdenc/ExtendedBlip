@@ -22,6 +22,12 @@ Function::Function()
     }
 }
 
+ReturnType Function::execute()
+{
+    CallStack::getScope().declareFunc(this); // Functions aren't fully defined until executed
+    return ReturnType();
+}
+
 
 Function::~Function()
 {

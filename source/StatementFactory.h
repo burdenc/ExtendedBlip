@@ -51,9 +51,7 @@ public:
 
         if (function_keyword == next_token())
         {
-            Function* func = new Function();
-            CallStack::getScope().declareFunc(func);
-            return func;
+            return new Function();
         }
 
         return nullptr;

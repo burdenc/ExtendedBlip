@@ -11,7 +11,7 @@ public:
     Function();
     virtual ~Function();
 
-    virtual ReturnType execute() { return ReturnType(); } // Executing a function does nothing as they have to be called
+    virtual ReturnType execute(); // Executing a function does nothing as they have to be called
     int call(int* params);
 
     String name;
